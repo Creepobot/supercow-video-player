@@ -1,6 +1,6 @@
 # Some hardcoded piece of shit
 ### Uuuh... Yeah... I made it.
-You can use `StartAnim()` and `ImageToLevel()` functions. You may also need functions from the `Utils` class.
+You can use all the code from the `Main()` with a couple of changes or just use `StartAnim()` and `ImageToLevel()` functions as you see fit. Good luck.
 ## Requirements
 * Average knowledge of the C# language (like really, comments in the code are pretty bad and will not teach you how to use it)
 * .NET Framework 3.5
