@@ -49,7 +49,7 @@
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\NevosoftClasses\NevosoftClasses.csproj">
+    <ProjectReference Include="..\NevosoftClasses\NevosoftClasses.csproj">
       <Project>{5848a913-ddc4-489c-9e74-530c33a8b50f}</Project>
       <Name>NevosoftClasses</Name>
     </ProjectReference>

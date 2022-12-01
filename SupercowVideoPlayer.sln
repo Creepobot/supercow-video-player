@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupercowVideoPlayer", "SupercowVideoPlayer\SupercowVideoPlayer.csproj", "{15327AE8-2673-414C-916F-FE3FBC1DA9CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevosoftClasses", "..\NevosoftClasses\NevosoftClasses.csproj", "{5848A913-DDC4-489C-9E74-530C33A8B50F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevosoftClasses", "NevosoftClasses\NevosoftClasses.csproj", "{5848A913-DDC4-489C-9E74-530C33A8B50F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
