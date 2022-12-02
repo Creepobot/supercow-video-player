@@ -15,28 +15,29 @@ namespace SupercowBadApple
 
         static void Main()
         {
+            string input = "./input-frames";
+            string output = "./output-frames";
+
             HotkeyManager.RegisterHotkey(Keys.A, KeyModifiers.Alt);
             HotkeyManager.HotkeyPressed += new EventHandler<HotkeyEventArgs>((object s, HotkeyEventArgs e) => Environment.Exit(0));
 
             Console.WriteLine("You can stop this process at any time by clicking Alt+A");
             Console.WriteLine("-----------------------------------------");
-            Console.WriteLine("Press any button to start in 3 seconds...");
-            Console.ReadKey();
+            Console.WriteLine("Enter the path to the level to start in three seconds...");
+            string level = Console.ReadLine();
             Console.WriteLine("Starting, please switch focus to the Supercow editor window");
             Thread.Sleep(3000);
 
-            StartAnim(@"C:\Users\creep\Downloads\bad_apple",
-                $@"C:\Users\creep\Desktop\frames\",
-                @"C:\Users\creep\Desktop\Mario\data\levels\1\level03.lev",
-                new Rectangle(0, 0, 1920, 1080), new Point(114, 64), new Point(1900, 130), new Point(1800, 130),
+            StartAnim(input, output, level, new Rectangle(0, 0, 1920, 1080),
+                new Point(114, 64), new Point(1900, 130), new Point(1800, 130),
                 (Point pixelPosition, Color pixelColor, Level currentLevel) =>
                 {
                     var brightness = pixelColor.GetBrightness();
                     #region Bad Apple
                     if (brightness < 0.5)
-                        currentLevel.Grounds[0, 11 + pixelPosition.Y, 92 + pixelPosition.X] = 4;
+                        currentLevel.Grounds[0, pixelPosition.Y, pixelPosition.X] = 4;
                     else
-                        currentLevel.Grounds[0, 11 + pixelPosition.Y, 92 + pixelPosition.X] = 0;
+                        currentLevel.Grounds[0, pixelPosition.Y, pixelPosition.X] = 0;
                     #endregion
                     #region Rainy Boots
                     /*if (brightness > 0.7)
@@ -92,17 +93,15 @@ namespace SupercowBadApple
             string levelPath, Rectangle screenshotProps, Point frameSize, Point firstButton, Point secondButton,
             Action<Point, Color, Level> function)
         {
-            var frames = new DirectoryInfo(originalFramesFolder).GetFiles().OrderBy(f => f.LastWriteTime);
+            var frames = new DirectoryInfo(originalFramesFolder).GetFiles().Where(r => r.Name.EndsWith(".png")).OrderBy(f => f.LastWriteTime);
             int i = 0;
             foreach (var file in frames)
             {
                 using (Bitmap img = new Bitmap(Utils.ResizeImage(Image.FromFile(file.FullName), frameSize.X, frameSize.Y)))
                 {
-                    using (Level lev = Level.FromFile(levelPath))
-                    {
-                        ImageToLevel(lev, img, function);
-                        lev.Save(levelPath);
-                    }
+                    Level lev = Level.FromFile(levelPath);
+                    ImageToLevel(lev, img, function);
+                    lev.Save(levelPath);
                 }
 
                 Utils.LeftClick(firstButton.X, firstButton.Y);
