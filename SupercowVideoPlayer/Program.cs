@@ -29,7 +29,7 @@ namespace SupercowBadApple
             Thread.Sleep(3000);
 
             StartAnim(input, output, level, new Rectangle(0, 0, 1920, 1080),
-                new Point(114, 64), new Point(1900, 130), new Point(1800, 130),
+            new Point(114, 64), new Point(1900, 130), new Point(1800, 130),
                 (Point pixelPosition, Color pixelColor, Level currentLevel) =>
                 {
                     var brightness = pixelColor.GetBrightness();
