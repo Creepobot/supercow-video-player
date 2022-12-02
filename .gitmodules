@@ -1,6 +1,6 @@
 [submodule "NevosoftClasses"]
 	path = NevosoftClasses
 	url = https://github.com/Creepobot/NevosoftClasses
-[submodule "LockBitmap"]
-	path = SupercowVideoPlayer
+[submodule "0b7f8496f1aadcfee2db"]
+	path = 0b7f8496f1aadcfee2db
 	url = https://gist.github.com/tkouba/0b7f8496f1aadcfee2db
