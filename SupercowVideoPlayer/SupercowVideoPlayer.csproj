@@ -43,7 +43,6 @@
   <ItemGroup>
     <Folder Include="input-frames\" />
     <Folder Include="output-frames\" />
-    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NevosoftClasses\NevosoftClasses.csproj">
@@ -58,7 +57,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)input-frames" "$(TargetDir)input-frames" /e /y /i /r
-xcopy "$(ProjectDir)output-frames" "$(TargetDir)output-frames" /e /y /i /r</PostBuildEvent>
+    <PostBuildEvent>mkdir "$(TargetDir)input-frames"
+mkdir "$(TargetDir)output-frames"</PostBuildEvent>
   </PropertyGroup>
 </Project>

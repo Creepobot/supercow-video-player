@@ -3,11 +3,6 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-input-frames/*
-!frames/.gitkeep
-output-frames/*
-!output-frames/.gitkeep
-
 # User-specific files
 *.rsuser
 *.suo
