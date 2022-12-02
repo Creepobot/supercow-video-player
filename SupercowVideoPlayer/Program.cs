@@ -15,21 +15,23 @@ namespace SupercowBadApple
 
         static void Main()
         {
-            string input = "./input-frames";
-            string output = "./output-frames";
+            try
+            {
+                string input = "./input-frames";
+                string output = "./output-frames";
 
-            HotkeyManager.RegisterHotkey(Keys.A, KeyModifiers.Alt);
-            HotkeyManager.HotkeyPressed += new EventHandler<HotkeyEventArgs>((object s, HotkeyEventArgs e) => Environment.Exit(0));
+                HotkeyManager.RegisterHotkey(Keys.A, KeyModifiers.Alt);
+                HotkeyManager.HotkeyPressed += new EventHandler<HotkeyEventArgs>((object s, HotkeyEventArgs e) => Environment.Exit(0));
 
-            Console.WriteLine("You can stop this process at any time by clicking Alt+A");
-            Console.WriteLine("-----------------------------------------");
-            Console.WriteLine("Enter the path to the level to start in three seconds...");
-            string level = Console.ReadLine();
-            Console.WriteLine("Starting, please switch focus to the Supercow editor window");
-            Thread.Sleep(3000);
+                Console.WriteLine("You can stop this process at any time by clicking Alt+A");
+                Console.WriteLine("-----------------------------------------");
+                Console.WriteLine("Enter the path to the level to start in three seconds...");
+                string level = Console.ReadLine();
+                Console.WriteLine("Starting, please switch focus to the Supercow editor window");
+                Thread.Sleep(3000);
 
-            StartAnim(input, output, level, new Rectangle(0, 0, 1920, 1080),
-            new Point(114, 64), new Point(1900, 130), new Point(1800, 130),
+                StartAnim(input, output, level, new Rectangle(0, 0, 1920, 1080),
+                    new Point(114, 64), new Point(1900, 130), new Point(1800, 130),
                 (Point pixelPosition, Color pixelColor, Level currentLevel) =>
                 {
                     var brightness = pixelColor.GetBrightness();
@@ -58,8 +60,16 @@ namespace SupercowBadApple
                     #endregion
                 });
 
-            Console.WriteLine("Done");
-            Console.ReadLine();
+                Console.WriteLine("Done");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex.Message}\n{ex.StackTrace}");
+            }
+            finally
+            {
+                Console.ReadLine();
+            }
         }
 
         /// <summary>
