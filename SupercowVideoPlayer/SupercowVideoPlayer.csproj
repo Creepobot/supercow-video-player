@@ -49,16 +49,11 @@
     <Compile Include="LockBitmap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupercowLevel.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NevosoftClasses\NevosoftClasses.csproj">
-      <Project>{94c398cd-3de8-41bb-81d7-dcd14357de38}</Project>
-      <Name>NevosoftClasses</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
