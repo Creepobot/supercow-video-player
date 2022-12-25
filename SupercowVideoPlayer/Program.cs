@@ -37,25 +37,25 @@ namespace SupercowBadApple
                     var brightness = pixelColor.GetBrightness();
                     #region Bad Apple
                     if (brightness < 0.5)
-                        currentLevel.Grounds[0, pixelPosition.Y, pixelPosition.X] = 4;
+                        currentLevel.Grounds[0][pixelPosition.X, pixelPosition.Y] = 4;
                     else
-                        currentLevel.Grounds[0, pixelPosition.Y, pixelPosition.X] = 0;
+                        currentLevel.Grounds[0][pixelPosition.X, pixelPosition.Y] = 0;
                     #endregion
                     #region Rainy Boots
                     /*if (brightness > 0.7)
                     {
-                        currentLevel.Grounds[0, pixelPosition.Y, 69 + pixelPosition.X] = 2;
-                        currentLevel.Grounds[1, pixelPosition.Y, 69 + pixelPosition.X] = 0;
+                        currentLevel.Grounds[0][pixelPosition.Y, 69 + pixelPosition.X] = 2;
+                        currentLevel.Grounds[1][pixelPosition.Y, 69 + pixelPosition.X] = 0;
                     }
                     else if (brightness < 0.68)
                     {
-                        currentLevel.Grounds[1, pixelPosition.Y, 69 + pixelPosition.X] = 4;
-                        currentLevel.Grounds[0, pixelPosition.Y, 69 + pixelPosition.X] = 0;
+                        currentLevel.Grounds[1][pixelPosition.Y, 69 + pixelPosition.X] = 4;
+                        currentLevel.Grounds[0][pixelPosition.Y, 69 + pixelPosition.X] = 0;
                     }
                     else
                     {
-                        currentLevel.Grounds[1, pixelPosition.Y, 69 + pixelPosition.X] = 0;
-                        currentLevel.Grounds[0, pixelPosition.Y, 69 + pixelPosition.X] = 0;
+                        currentLevel.Grounds[1][69 + pixelPosition.X, pixelPosition.Y] = 0;
+                        currentLevel.Grounds[0][69 + pixelPosition.X, pixelPosition.Y] = 0;
                     }*/
                     #endregion
                 });
